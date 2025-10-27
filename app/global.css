@@ -1,1 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f8fafc;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #4361ee 0%, #7209b7 50%, #4cc9f0 100%);
+}
