@@ -1,1 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabSync - Find Your Code Buddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span>CollabSync</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#dashboard" class="nav-link" id="dashboardLink">Dashboard</a>
+                <a href="#projects" class="nav-link" id="projectsLink">Projects</a>
+                <a href="#discover" class="nav-link" id="discoverLink">Discover</a>
+                <a href="#workspace" class="nav-link" id="workspaceLink">Workspace</a>
+                <div class="nav-user" id="navUser">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name" id="userName">Guest</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#profile" class="dropdown-item">
+                            <i class="fas fa-user-circle"></i>
+                            My Profile
+                        </a>
+                        <a href="#settings" class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-auth" id="navAuth">
+                    <a href="#login" class="btn btn-outline">Login</a>
+                    <a href="#register" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i class="fas fa-rocket"></i>
+                            <span>Find Your Perfect Coding Partner</span>
+                        </div>
+                        <h1 class="hero-title">
+                            Connect, Collaborate,
+                            <span class="text-gradient">Code Together</span>
+                        </h1>
+                        <p class="hero-description">
+                            Join thousands of students building amazing projects together. 
+                            Find the perfect teammates, share ideas, and turn your concepts into reality.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#register" class="btn btn-primary btn-lg">
+                                <span>Get Started</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#discover" class="btn btn-outline btn-lg">
+                                <i class="fas fa-users"></i>
+                                <span>Find Buddies</span>
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number">10K+</div>
+                                <div class="stat-label">Students</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">2K+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Universities</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="visual-card card">
+                            <div class="card-header">
+                                <div class="user-avatar small">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">Sarah Chen</div>
+                                    <div class="user-title">MIT Computer Science</div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3>AI Study Planner</h3>
+                                <p>Looking for ML engineers to build an intelligent study scheduler</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">React</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="project-meta">
+                                    <span><i class="fas fa-users"></i> 2/4 members</span>
+                                    <span><i class="fas fa-clock"></i> 2 weeks ago</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm">Join Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login" class="section">
+            <div class="container">
+                <div class="auth-container">
+                    <div class="auth-card card">
+                        <div class="auth-header">
+                            <h2>Welcome Back</h2>
+                            <p>Sign in to your CollabSync account</p>
+                        </div>
+                        <form id="loginForm" class="auth-form">
+                            <div class="form-group">
+                                <label for="loginEmail">University Email</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="loginEmail" placeholder="you@university.edu" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span id="loginBtnText">Sign In</span>
+                                <div class="btn-loader" id="loginLoader"></div>
+                            </button>
+                        </form>
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="#register">Sign up</a></p>
+                        </div>
+                        <div class="demo-credentials">
+                            <p><strong>Demo Credentials:</strong></p>
+                            <p>Email: demo@university.edu</p>
+                            <p>Password: password</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Register Section -->
+        <section id="register" class="section">
+            <div class="container">
+                <div class="auth-container">
+                    <div class="auth-card card">
+                        <div class="auth-header">
+                            <h2>Join CollabSync</h2>
+                            <p>Create your account to start collaborating</p>
+                        </div>
+                        <form id="registerForm" class="auth-form">
+                            <div class="form-group">
+                                <label for="registerName">Full Name</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="registerName" placeholder="Enter your full name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail">University Email</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="registerEmail" placeholder="you@university.edu" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerUniversity">University</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-university"></i>
+                                    <input type="text" id="registerUniversity" placeholder="Your university name" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="registerBranch">Branch</label>
+                                    <select id="registerBranch" required>
+                                        <option value="">Select Branch</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Electrical Engineering">Electrical Engineering</option>
+                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                        <option value="Civil Engineering">Civil Engineering</option>
+                                        <option value="Information Technology">Information Technology</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerYear">Graduation Year</label>
+                                    <select id="registerYear" required>
+                                        <option value="">Select Year</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Password</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="registerPassword" placeholder="Create a secure password" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span id="registerBtnText">Create Account</span>
+                                <div class="btn-loader" id="registerLoader"></div>
+                            </button>
+                        </form>
+                        <div class="auth-footer">
+                            <p>Already have an account? <a href="#login">Sign in</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h1>Welcome back, <span id="dashboardUserName">User</span>! <span class="wave">👋</span></h1>
+                    <p>Ready to build something amazing today?</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="projectsCount">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="connectionsCount">0</div>
+                            <div class="stat-label">Connections</div>
+                        </div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="xpCount">0</div>
+                            <div class="stat-label">XP Points</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="dashboard-column">
+                        <div class="section-header">
+                            <h2>AI Recommendations</h2>
+                            <p>Smart matches based on your skills</p>
+                        </div>
+                        
+                        <div class="recommendation-card card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Project Recommendations</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div id="projectRecommendations">
+                                    <!-- Project recommendations will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recommendation-card card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <i class="fas fa-user-friends"></i>
+                                    <span>Buddy Recommendations</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div id="buddyRecommendations">
+                                    <!-- Buddy recommendations will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-column">
+                        <div class="section-header">
+                            <h2>Quick Actions</h2>
+                            <p>Start collaborating right away</p>
+                        </div>
+
+                        <div class="action-grid">
+                            <a href="#projects?new=true" class="action-card card">
+                                <div class="action-icon primary">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="action-content">
+                                    <h3>Start New Project</h3>
+                                    <p>Share your idea and find teammates</p>
+                                </div>
+                            </a>
+
+                            <a href="#discover" class="action-card card">
+                                <div class="action-icon secondary">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="action-content">
+                                    <h3>Find Buddies</h3>
+                                    <p>Discover students to collaborate with</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="recent-activity card">
+                            <div class="card-header">
+                                <h3>Recent Activity</h3>
+                            </div>
+                            <div class="card-content">
+                                <div id="recentActivity">
+                                    <!-- Recent activity will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Projects</h1>
+                    <p>Discover amazing projects and join teams</p>
+                    <button class="btn btn-primary" id="newProjectBtn">
+                        <i class="fas fa-plus"></i>
+                        New Project
+                    </button>
+                </div>
+
+                <div class="filters-card card">
+                    <div class="filters-header">
+                        <h3>Filters</h3>
+                    </div>
+                    <div class="filters-content">
+                        <div class="filter-group">
+                            <input type="text" id="projectSearch" placeholder="Search projects, technologies...">
+                        </div>
+                        <div class="filter-group">
+                            <select id="projectStatus">
+                                <option value="all">All Status</option>
+                                <option value="recruiting">Recruiting</option>
+                                <option value="active">Active</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select id="projectUniversity">
+                                <option value="all">All Universities</option>
+                                <option value="Stanford">Stanford</option>
+                                <option value="MIT">MIT</option>
+                                <option value="Harvard">Harvard</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- New Project Modal -->
+        <div id="newProjectModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Create New Project</h2>
+                    <button class="modal-close" id="closeProjectModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form id="newProjectForm" class="modal-body">
+                    <div class="form-group">
+                        <label for="projectTitle">Project Title</label>
+                        <input type="text" id="projectTitle" placeholder="Enter project title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDescription">Description</label>
+                        <textarea id="projectDescription" placeholder="Describe your project..." rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectTechStack">Tech Stack</label>
+                        <div class="tags-input" id="techStackInput">
+                            <div class="tags-container" id="techTagsContainer"></div>
+                            <input type="text" id="projectTechStack" placeholder="Add technologies...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Required Roles</label>
+                        <div id="requiredRoles">
+                            <div class="role-input">
+                                <input type="text" placeholder="Role (e.g., Frontend Developer)" class="role-name">
+                                <input type="number" placeholder="Count" class="role-count" min="1" value="1">
+                                <button type="button" class="btn btn-danger btn-sm remove-role">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline btn-sm" id="addRoleBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Role
+                        </button>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projectTimeline">Timeline (weeks)</label>
+                            <input type="number" id="projectTimeline" placeholder="8" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectVibe">Project Vibe</label>
+                            <select id="projectVibe" required>
+                                <option value="serious">Serious 🎯</option>
+                                <option value="casual">Casual 😊</option>
+                                <option value="learning">Learning 📚</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-outline" id="cancelProjectBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Discover Section -->
+        <section id="discover" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Discover Buddies</h1>
+                    <p>Connect with amazing students and build your network</p>
+                </div>
+
+                <div class="filters-card card">
+                    <div class="filters-content">
+                        <div class="filter-group">
+                            <input type="text" id="userSearch" placeholder="Search by name, university, skills...">
+                        </div>
+                        <div class="filter-group">
+                            <select id="userSkills">
+                                <option value="all">All Skills</option>
+                                <option value="React">React</option>
+                                <option value="Python">Python</option>
+                                <option value="Node.js">Node.js</option>
+                                <option value="Machine Learning">Machine Learning</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select id="userAvailability">
+                                <option value="all">All Availability</option>
+                                <option value="available">Available</option>
+                                <option value="busy">Busy</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="users-grid" id="usersGrid">
+                    <!-- Users will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Workspace Section -->
+        <section id="workspace" class="section">
+            <div class="container">
+                <div class="workspace-header">
+                    <h1>Project Workspace</h1>
+                    <p id="workspaceProjectTitle">AI Study Planner</p>
+                </div>
+
+                <div class="workspace-layout">
+                    <div class="workspace-sidebar">
+                        <div class="sidebar-section">
+                            <h3>Team Members</h3>
+                            <div class="team-members" id="teamMembers">
+                                <!-- Team members will be loaded here -->
+                            </div>
+                        </div>
+                        <div class="sidebar-section">
+                            <h3>Project Details</h3>
+                            <div class="project-info">
+                                <div class="info-item">
+                                    <span class="info-label">Status:</span>
+                                    <span class="info-value recruiting">Recruiting</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Timeline:</span>
+                                    <span class="info-value">8 weeks</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Tech Stack:</span>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">Node.js</span>
+                                        <span class="tech-tag">MongoDB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workspace-main">
+                        <div class="workspace-tabs">
+                            <button class="tab-btn active" data-tab="chat">Team Chat</button>
+                            <button class="tab-btn" data-tab="tasks">Task Board</button>
+                            <button class="tab-btn" data-tab="files">File Sharing</button>
+                        </div>
+
+                        <div class="tab-content active" id="chatTab">
+                            <div class="chat-container card">
+                                <div class="chat-messages" id="chatMessages">
+                                    <!-- Chat messages will be loaded here -->
+                                </div>
+                                <div class="chat-input">
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-paperclip"></i>
+                                        <input type="text" id="chatInput" placeholder="Type a message...">
+                                    </div>
+                                    <button class="btn btn-primary" id="sendMessageBtn">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="tasksTab">
+                            <div class="tasks-container">
+                                <div class="task-board">
+                                    <div class="task-column">
+                                        <h3>To Do</h3>
+                                        <div class="task-list" id="todoTasks">
+                                            <!-- To Do tasks will be loaded here -->
+                                        </div>
+                                        <button class="btn btn-outline btn-sm add-task-btn">
+                                            <i class="fas fa-plus"></i>
+                                            Add Task
+                                        </button>
+                                    </div>
+                                    <div class="task-column">
+                                        <h3>In Progress</h3>
+                                        <div class="task-list" id="inProgressTasks">
+                                            <!-- In Progress tasks will be loaded here -->
+                                        </div>
+                                    </div>
+                                    <div class="task-column">
+                                        <h3>Done</h3>
+                                        <div class="task-list" id="doneTasks">
+                                            <!-- Done tasks will be loaded here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="filesTab">
+                            <div class="files-container card">
+                                <div class="files-header">
+                                    <h3>Project Files</h3>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-upload"></i>
+                                        Upload File
+                                    </button>
+                                </div>
+                                <div class="files-list" id="filesList">
+                                    <!-- Files will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
